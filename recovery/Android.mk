@@ -5,7 +5,7 @@ LOCAL_MODULE_TAGS := eng
 LOCAL_C_INCLUDES += bootable/recovery
 LOCAL_SRC_FILES := recovery_ui.cpp
 
-LOCAL_MODULE := librecovery_ui_drone2_s5p4418
+LOCAL_MODULE := librecovery_ui_nanopi2
 
 include $(BUILD_STATIC_LIBRARY)
 
@@ -20,6 +20,6 @@ LOCAL_SRC_FILES := \
 	../../../../hardware/samsung_slsi/slsiap/spi_update/update.c \
 	recovery_updater.c
 
-LOCAL_MODULE := librecovery_updater_drone2_s5p4418
+LOCAL_MODULE := librecovery_updater_nanopi2
 
 include $(BUILD_STATIC_LIBRARY)

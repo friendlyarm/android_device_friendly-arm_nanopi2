@@ -19,10 +19,10 @@ const char *ITEMS[] = {
     NULL
 };
 
-class drone2_s5p4418UI : public ScreenRecoveryUI
+class nanopi2UI : public ScreenRecoveryUI
 {
 public:
-    drone2_s5p4418UI() :
+    nanopi2UI() :
         mNextKeyIsLongPressed(false)
     {
     }
@@ -55,11 +55,11 @@ private:
     bool mNextKeyIsLongPressed;
 };
 
-class drone2_s5p4418Device : public Device
+class nanopi2Device : public Device
 {
 public:
-    drone2_s5p4418Device() :
-        ui(new drone2_s5p4418UI)
+    nanopi2Device() :
+        ui(new nanopi2UI)
     {
     }
 
@@ -98,5 +98,5 @@ private:
 };
 
 Device *make_device() {
-     return new drone2_s5p4418Device;
+     return new nanopi2Device;
 }

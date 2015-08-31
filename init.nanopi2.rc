@@ -1,4 +1,4 @@
-import init.drone2_s5p4418.usb.rc
+import init.nanopi2.usb.rc
 
 on init
     start watchdogd
@@ -89,7 +89,7 @@ on boot
     setprop pm.sdwake.enabled true
 
     # for ota
-    setprop otaupdater.otaid nexell_slsiap_drone2_s5p4418_kk
+    setprop otaupdater.otaid nexell_slsiap_nanopi2_kk
     setprop otaupdater.otaver 10000
     setprop otaupdater.otatime 20140513-0800
     setprop otaupdater.sdcard.os cache
@@ -120,7 +120,7 @@ on boot
 #    write /sys/devices/platform/vr.0/power_policy coarse_demand
 
 on fs
-    mount_all /fstab.drone2_s5p4418
+    mount_all /fstab.nanopi2
     setprop ro.crypto.fuse_sdcard true
     insmod /system/lib/modules/vr.ko
 

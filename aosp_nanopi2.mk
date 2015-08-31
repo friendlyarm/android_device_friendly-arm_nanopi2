@@ -13,6 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-$(call inherit-product, device/nexell/drone2_s5p4418/full_drone2_s5p4418.mk)
+$(call inherit-product, device/friendly-arm/nanopi2/full_nanopi2.mk)
 
-PRODUCT_NAME := aosp_drone2_s5p4418
+PRODUCT_NAME := aosp_nanopi2

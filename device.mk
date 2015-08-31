@@ -8,48 +8,48 @@ PRODUCT_COPY_FILES += \
 # init
 ################################################################################
 PRODUCT_COPY_FILES += \
-	device/nexell/drone2_s5p4418/init.drone2_s5p4418.rc:root/init.drone2_s5p4418.rc \
-	device/nexell/drone2_s5p4418/init.drone2_s5p4418.usb.rc:root/init.drone2_s5p4418.usb.rc \
-	device/nexell/drone2_s5p4418/init.recovery.drone2_s5p4418.rc:root/init.recovery.drone2_s5p4418.rc \
-	device/nexell/drone2_s5p4418/fstab.drone2_s5p4418:root/fstab.drone2_s5p4418 \
-	device/nexell/drone2_s5p4418/ueventd.drone2_s5p4418.rc:root/ueventd.drone2_s5p4418.rc \
-	device/nexell/drone2_s5p4418/bootanimation.zip:system/media/bootanimation.zip
+	device/friendly-arm/nanopi2/init.nanopi2.rc:root/init.nanopi2.rc \
+	device/friendly-arm/nanopi2/init.nanopi2.usb.rc:root/init.nanopi2.usb.rc \
+	device/friendly-arm/nanopi2/init.recovery.nanopi2.rc:root/init.recovery.nanopi2.rc \
+	device/friendly-arm/nanopi2/fstab.nanopi2:root/fstab.nanopi2 \
+	device/friendly-arm/nanopi2/ueventd.nanopi2.rc:root/ueventd.nanopi2.rc \
+	device/friendly-arm/nanopi2/bootanimation.zip:system/media/bootanimation.zip
 
 ################################################################################
 # key
 ################################################################################
 PRODUCT_COPY_FILES += \
-	device/nexell/drone2_s5p4418/keypad_drone2_s5p4418.kl:system/usr/keylayout/keypad_drone2_s5p4418.kl \
-	device/nexell/drone2_s5p4418/keypad_drone2_s5p4418.kcm:system/usr/keychars/keypad_drone2_s5p4418.kcm
+	device/friendly-arm/nanopi2/keypad_nanopi2.kl:system/usr/keylayout/keypad_nanopi2.kl \
+	device/friendly-arm/nanopi2/keypad_nanopi2.kcm:system/usr/keychars/keypad_nanopi2.kcm
 
 ################################################################################
 # touch
 ################################################################################
 PRODUCT_COPY_FILES += \
-    device/nexell/drone2_s5p4418/gslX680.idc:system/usr/idc/gslX680.idc
+    device/friendly-arm/nanopi2/gslX680.idc:system/usr/idc/gslX680.idc
 
 ################################################################################
 # audio
 ################################################################################
 # mixer paths
 PRODUCT_COPY_FILES += \
-	device/nexell/drone2_s5p4418/audio/tiny_hw.drone2_s5p4418.xml:system/etc/tiny_hw.drone2_s5p4418.xml
+	device/friendly-arm/nanopi2/audio/tiny_hw.nanopi2.xml:system/etc/tiny_hw.nanopi2.xml
 # audio policy configuration
 PRODUCT_COPY_FILES += \
-	device/nexell/drone2_s5p4418/audio/audio_policy.conf:system/etc/audio_policy.conf
+	device/friendly-arm/nanopi2/audio/audio_policy.conf:system/etc/audio_policy.conf
 
 ################################################################################
 # media, camera
 ################################################################################
 PRODUCT_COPY_FILES += \
-	device/nexell/drone2_s5p4418/media_codecs.xml:system/etc/media_codecs.xml \
-	device/nexell/drone2_s5p4418/media_profiles.xml:system/etc/media_profiles.xml
+	device/friendly-arm/nanopi2/media_codecs.xml:system/etc/media_codecs.xml \
+	device/friendly-arm/nanopi2/media_profiles.xml:system/etc/media_profiles.xml
 
 ################################################################################
 # sensor
 ################################################################################
 PRODUCT_PACKAGES += \
-	sensors.drone2_s5p4418
+	sensors.nanopi2
 
 ################################################################################
 # camera
@@ -103,7 +103,7 @@ PRODUCT_COPY_FILES += \
 # generic
 ################################################################################
 PRODUCT_COPY_FILES += \
-  device/nexell/drone2_s5p4418/tablet_core_hardware.xml:system/etc/permissions/tablet_core_hardware.xml \
+  device/friendly-arm/nanopi2/tablet_core_hardware.xml:system/etc/permissions/tablet_core_hardware.xml \
   frameworks/native/data/etc/android.hardware.touchscreen.multitouch.jazzhand.xml:system/etc/permissions/android.hardware.touchscreen.multitouch.jazzhand.xml \
   frameworks/native/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
   frameworks/native/data/etc/android.hardware.wifi.direct.xml:system/etc/permissions/android.hardware.wifi.direct.xml \
@@ -121,7 +121,7 @@ PRODUCT_AAPT_PREF_CONFIG := xhdpi
 PRODUCT_CHARACTERISTICS := tablet,usbstorage
 
 DEVICE_PACKAGE_OVERLAYS := \
-	device/nexell/drone2_s5p4418/overlay
+	device/friendly-arm/nanopi2/overlay
 
 PRODUCT_TAGS += dalvik.gc.type-precise
 

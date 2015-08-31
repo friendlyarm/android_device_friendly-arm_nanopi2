@@ -12,11 +12,11 @@ PRODUCT_PROPERTY_OVERRIDES := \
 # Inherit from those products. Most specific first.
 #$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base.mk)
-$(call inherit-product, device/nexell/drone2_s5p4418/device.mk)
+$(call inherit-product, device/friendly-arm/nanopi2/device.mk)
 
-PRODUCT_NAME := full_drone2_s5p4418
-PRODUCT_DEVICE := drone2_s5p4418
+PRODUCT_NAME := full_nanopi2
+PRODUCT_DEVICE := nanopi2
 PRODUCT_BRAND := Android
-PRODUCT_MODEL := AOSP on drone2_s5p4418
-PRODUCT_MANUFACTURER := Nexell
+PRODUCT_MODEL := AOSP on NanoPi 2
+PRODUCT_MANUFACTURER := FriendlyARM
 #PRODUCT_RESTRICT_VENDOR_FILES := owner path

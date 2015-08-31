@@ -1,8 +1,8 @@
-TARGET_BOARD_INFO_FILE := device/nexell/drone2_s5p4418/board-info.txt
+TARGET_BOARD_INFO_FILE := device/friendly-arm/nanopi2/board-info.txt
 
 
 TARGET_BOARD_PLATFORM 		 := slsiap
-TARGET_BOOTLOADER_BOARD_NAME := drone2_s5p4418
+TARGET_BOOTLOADER_BOARD_NAME := nanopi2
 
 TARGET_CPU_ABI  := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
@@ -21,10 +21,10 @@ TARGET_BOOTLOADER_IS_2ND := false
 TARGET_NO_RADIOIMAGE := false
 
 # recovery
-TARGET_RECOVERY_FSTAB := device/nexell/drone2_s5p4418/recovery.fstab
-TARGET_RELEASETOOLS_EXTENSIONS := device/nexell/drone2_s5p4418
-TARGET_RECOVERY_UPDATER_LIBS += librecovery_updater_drone2_s5p4418
-TARGET_RECOVERY_UI_LIB := librecovery_ui_drone2_s5p4418
+TARGET_RECOVERY_FSTAB := device/friendly-arm/nanopi2/recovery.fstab
+TARGET_RELEASETOOLS_EXTENSIONS := device/friendly-arm/nanopi2
+TARGET_RECOVERY_UPDATER_LIBS += librecovery_updater_nanopi2
+TARGET_RECOVERY_UI_LIB := librecovery_ui_nanopi2
 # TARGET_RECOVERY_PIXEL_FORMAT not specified ==> rgb565
 
 # 2ndbootloader, bootloader
@@ -35,10 +35,10 @@ TARGET_RECOVERY_UI_LIB := librecovery_ui_drone2_s5p4418
 #$(warning INSTALLED_RADIOIMAGE_TARGET: $(INSTALLED_RADIOIMAGE_TARGET))
 
 # certificate
-PRODUCT_DEFAULT_DEV_CERTIFICATE := vendor/nexell/security/drone2_s5p4418/release
+PRODUCT_DEFAULT_DEV_CERTIFICATE := vendor/friendly-arm/security/nanopi2/release
 
 # opengl
-BOARD_EGL_CFG := device/nexell/drone2_s5p4418/egl.cfg
+BOARD_EGL_CFG := device/friendly-arm/nanopi2/egl.cfg
 
 USE_OPENGL_RENDERER := true
 NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
@@ -107,7 +107,7 @@ SLSIAP_HWC_VERSION := 2
 
 # sepolicy
 BOARD_SEPOLICY_DIRS := \
-	device/nexell/drone2_s5p4418/sepolicy
+	device/friendly-arm/nanopi2/sepolicy
 
 BOARD_SEPOLICY_UNION := \
 	file_contexts \

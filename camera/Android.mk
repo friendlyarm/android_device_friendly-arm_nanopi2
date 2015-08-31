@@ -11,7 +11,7 @@ LOCAL_C_INCLUDES += \
 LOCAL_SHARED_LIBRARIES := liblog libv4l2-nexell
 LOCAL_STATIC_LIBRARIES := libcamerasensor
 LOCAL_SRC_FILES := board-camera.cpp
-LOCAL_MODULE := libcamera-drone2_s5p4418
+LOCAL_MODULE := libcamera-nanopi2
 LOCAL_MODULE_TAGS := optional
 include $(BUILD_STATIC_LIBRARY)
 
