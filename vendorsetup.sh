@@ -1,0 +1,2 @@
+add_lunch_combo aosp_nanopi2-userdebug
+#add_lunch_combo full_nanopi2-userdebug
