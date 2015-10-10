@@ -1,3 +1,0 @@
-dir: frameworks/base/ branch name: nexell/kitkat-mr1-pyrope-dev-drone  //TODO: Fix screen rotation bug && Add volume and screen capture button on screen.
-dir: system/vold      branch name: m/kitkat-mr1-pyrope-dev-ntfs   //TODO: Add support for ntfs
-
