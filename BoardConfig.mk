@@ -35,7 +35,7 @@ TARGET_RECOVERY_UI_LIB := librecovery_ui_nanopi2
 #$(warning INSTALLED_RADIOIMAGE_TARGET: $(INSTALLED_RADIOIMAGE_TARGET))
 
 # certificate
-PRODUCT_DEFAULT_DEV_CERTIFICATE := vendor/friendly-arm/security/nanopi2/release
+PRODUCT_DEFAULT_DEV_CERTIFICATE := vendor/friendly-arm/nanopi2/security/releasekey
 
 # opengl
 BOARD_EGL_CFG := device/friendly-arm/nanopi2/egl.cfg
