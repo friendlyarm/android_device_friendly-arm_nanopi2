@@ -112,8 +112,7 @@ PRODUCT_COPY_FILES += \
   frameworks/native/data/etc/android.hardware.usb.accessory.xml:system/etc/permissions/android.hardware.usb.accessory.xml \
   frameworks/native/data/etc/android.hardware.usb.host.xml:system/etc/permissions/android.hardware.usb.host.xml \
   frameworks/native/data/etc/android.hardware.sensor.accelerometer.xml:system/etc/permissions/android.hardware.sensor.accelerometer.xml \
-  frameworks/native/data/etc/android.hardware.audio.low_latency.xml:system/etc/permissions/android.hardware.audio.low_latency.xml \
-  linux/platform/s5p4418/library/lib/ratecontrol/libnxvidrc_android.so:system/lib/libnxvidrc_android.so
+  frameworks/native/data/etc/android.hardware.audio.low_latency.xml:system/etc/permissions/android.hardware.audio.low_latency.xml
 
 PRODUCT_AAPT_CONFIG := xlarge hdpi xhdpi large
 PRODUCT_AAPT_PREF_CONFIG := xhdpi
@@ -196,6 +195,7 @@ endif
 
 # slsiap
 $(call inherit-product-if-exists, hardware/samsung_slsi/slsiap/slsiap.mk)
+$(call inherit-product-if-exists, vendor/nexell/s5p4418/slsiap.mk)
 
 # google gms
 #$(call inherit-product-if-exists, vendor/google/gapps/device-partial.mk)
