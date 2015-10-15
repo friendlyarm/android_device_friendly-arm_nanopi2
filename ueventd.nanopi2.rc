@@ -17,3 +17,7 @@
 
 # hdmi-cec
 /dev/hdmi-cec             0666   system     system
+
+# bt
+/dev/ttyAMA1              0660   bluetooth  net_bt_stack
+/dev/rfkill               0666   bluetooth  net_bt_stack

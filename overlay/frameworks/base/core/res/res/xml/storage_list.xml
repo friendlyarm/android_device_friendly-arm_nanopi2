@@ -60,14 +60,4 @@
         android:storageDescription="@string/storage_usb"
         android:removable="true"
         android:maxFileSize="4096" />
-    <!-- usb disk7 -->
-    <storage android:mountPoint="/storage/usbdisk7"
-        android:storageDescription="@string/storage_usb"
-        android:removable="true"
-        android:maxFileSize="4096" />
-    <!-- usb disk8 -->
-    <storage android:mountPoint="/storage/usbdisk8"
-        android:storageDescription="@string/storage_usb"
-        android:removable="true"
-        android:maxFileSize="4096" />
 </StorageList>
