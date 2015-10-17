@@ -76,8 +76,8 @@ on boot
     # for hwc
     setprop hwc.scenario 2
 
-    # no tethering
-    setprop ro.tether.denied true
+    # tethering
+    setprop ro.tether.denied false
 
     # no gps
     setprop ro.gps.enabled true
