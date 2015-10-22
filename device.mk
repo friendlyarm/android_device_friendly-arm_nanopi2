@@ -17,8 +17,16 @@
 LOCAL_PATH := device/friendly-arm/nanopi2
 
 # kernel
-#PRODUCT_COPY_FILES += \
-	$(LOCAL_PATH)/uImage:kernel
+PRODUCT_COPY_FILES += \
+	$(LOCAL_PATH)/boot/uImage:boot/uImage
+
+PRODUCT_COPY_FILES += \
+	$(LOCAL_PATH)/boot/battery.bmp:boot/battery.bmp \
+	$(LOCAL_PATH)/boot/logo.bmp:boot/logo.bmp \
+	$(LOCAL_PATH)/boot/update.bmp:boot/update.bmp
+
+PRODUCT_COPY_FILES += \
+	$(LOCAL_PATH)/partmap_sdfs.txt:partmap.txt
 
 # Init files
 PRODUCT_COPY_FILES += \

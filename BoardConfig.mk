@@ -30,9 +30,9 @@ ARCH_ARM_HAVE_TLS_REGISTER := true
 # chip variation
 TARGET_CPU_VARIANT2  := s5p4418
 
-TARGET_NO_BOOTLOADER := false
+TARGET_NO_BOOTLOADER := true
 TARGET_NO_KERNEL     := true
-TARGET_NO_RADIOIMAGE := false
+TARGET_NO_RADIOIMAGE := true
 TARGET_BOOTLOADER_IS_2ND := false
 
 TARGET_PROVIDES_INIT_RC  := true
@@ -43,13 +43,6 @@ TARGET_RELEASETOOLS_EXTENSIONS := device/friendly-arm/nanopi2
 TARGET_RECOVERY_UPDATER_LIBS += librecovery_updater_nanopi2
 TARGET_RECOVERY_UI_LIB := librecovery_ui_nanopi2
 # TARGET_RECOVERY_PIXEL_FORMAT not specified ==> rgb565
-
-# 2ndbootloader, bootloader
-#$(call add-radio-file,2ndbootloader)
-#$(call add-radio-file,bootloader)
-#INSTALLED_RADIOIMAGE_TARGET += 2ndbootloader
-#INSTALLED_RADIOIMAGE_TARGET += bootloader
-#$(warning INSTALLED_RADIOIMAGE_TARGET: $(INSTALLED_RADIOIMAGE_TARGET))
 
 # certificate
 PRODUCT_DEFAULT_DEV_CERTIFICATE := vendor/friendly-arm/nanopi2/security/releasekey
@@ -132,6 +125,7 @@ BOARD_SEPOLICY_UNION := \
 # packaging for emmc, sd
 TARGET_USERIMAGES_USE_EXT4 := true
 BOARD_BOOTIMAGE_PARTITION_SIZE     := 67108864   #  64MB
+BOARD_BOOTIMAGE_FILE_SYSTEM_TYPE   := ext4
 BOARD_SYSTEMIMAGE_PARTITION_SIZE   := 790626304  # 754MB
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 2466250752 # 2.3GB
 BOARD_CACHEIMAGE_PARTITION_SIZE    := 448790528  # 428MB
