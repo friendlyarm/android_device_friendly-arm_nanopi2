@@ -93,6 +93,8 @@
 
     <bool name="config_enableWifiDisplay">true</bool>
 
+    <bool name="config_useDevInputEventForAudioJack">true</bool>
+
     <bool name="config_reverseDefaultRotation">true</bool>
 
     <!-- Translucent status & navigation bars perform poorly on this device -->

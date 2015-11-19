@@ -79,6 +79,9 @@ BOARD_SENSOR_TYPE := general
 EN_FFMPEG_EXTRACTOR := false
 EN_FFMPEG_AUDIO_DEC := false
 
+# Nexell Dual Audio
+EN_DUAL_AUDIO := false
+
 # wifi
 BOARD_WIFI_VENDOR := ap6212
 
@@ -110,6 +113,8 @@ BOARD_SEPOLICY_DIRS := \
 BOARD_SEPOLICY_UNION := \
 	file_contexts \
 	genfs_contexts \
+	property_contexts \
+	property.te \
 	adbd.te \
 	app.te \
 	device.te \
@@ -117,7 +122,26 @@ BOARD_SEPOLICY_UNION := \
 	file.te \
 	mediaserver.te \
 	surfaceflinger.te \
-	system.te
+	system_server.te \
+	init.te \
+	kernel.te \
+	shell.te \
+	servicemanager.te \
+	netd.te \
+	healthd.te \
+	zygote.te \
+	installd.te \
+	sdcardd.te \
+	debuggerd.te \
+	unlabeled.te \
+	bootanim.te \
+	adjlowmem.te \
+	service_contexts \
+	service.te
+
+# ART
+ART_USE_HSPACE_COMPACT := true
+WITH_DEXPREOPT := true
 
 # for google gms
 #-include vendor/google/gapps/BoardConfigPartial.mk

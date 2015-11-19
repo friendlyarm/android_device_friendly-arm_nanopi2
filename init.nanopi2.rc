@@ -243,20 +243,3 @@ service iprenew_bt-pan /system/bin/dhcpcd -n
     disabled
     oneshot
 
-# hwc
-service reporthwc /system/bin/report_hwc_scenario
-    class main
-    disabled
-    oneshot
-
-on property:hwc.scenario=*
-    start reporthwc
-
-on property:hwc.scale=*
-    start reporthwc
-
-on property:hwc.resolution=*
-    start reporthwc
-
-on property:hwc.screendownsizing=*
-    start reporthwc

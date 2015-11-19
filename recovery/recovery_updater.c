@@ -125,17 +125,28 @@ static int UpdateBootImage(char *imgBase, size_t imgSize, char *blockLocation)
     return ret;
 }
 
-/*extern int update_eeprom_from_mem(int type, char *mem, size_t size);*/
+static int updateEMMCCommon(int offset,char *imgBase, size_t imgSize)
+{
+#if 0
+    int ret = update_sd_from_mem("/dev/block/platform/dw_mmc.2/mmcblk1", offset, imgBase, imgSize);
+    if (ret < 0)
+        ret = update_sd_from_mem("/dev/block/platform/dw_mmc.2/mmcblk0", offset, imgBase, imgSize);
+    return ret;
+#else
+	return -1;
+#endif
+}
+
 static int UpdateBootloader(char *imgBase, size_t imgSize, char *type)
 {
-    printf("%s: %p, %d, %s\n", __func__, imgBase, imgSize, type);
-    return update_eeprom_from_mem(2, imgBase, imgSize);
+    printf("%s: %p, %d, %s at 0x%x\n", __func__, imgBase, imgSize, type, 0x8000);
+    return updateEMMCCommon(0x8000, imgBase, imgSize);
 }
 
 static int UpdateSecondBootloader(char *imgBase, size_t imgSize, char *type)
 {
-    printf("%s: %p, %d, %s\n", __func__, imgBase, imgSize, type);
-    return update_eeprom_from_mem(1, imgBase, imgSize);
+    printf("%s: %p, %d, %s at 0x%x\n", __func__, imgBase, imgSize, type, 0x200);
+    return updateEMMCCommon(0x200, imgBase, imgSize);
 }
 
 static Value* WriteBootImageFn(const char *name, State *state, int argc, Expr *argv[])
