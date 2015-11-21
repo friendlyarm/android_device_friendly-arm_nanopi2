@@ -41,8 +41,6 @@ TARGET_PROVIDES_INIT_RC  := true
 TARGET_RECOVERY_FSTAB := device/friendly-arm/nanopi2/recovery.fstab
 TARGET_RELEASETOOLS_EXTENSIONS := device/friendly-arm/nanopi2
 TARGET_RECOVERY_UPDATER_LIBS += librecovery_updater_nanopi2
-TARGET_RECOVERY_UI_LIB := librecovery_ui_nanopi2
-# TARGET_RECOVERY_PIXEL_FORMAT not specified ==> rgb565
 
 # certificate
 PRODUCT_DEFAULT_DEV_CERTIFICATE := vendor/friendly-arm/nanopi2/security/releasekey
