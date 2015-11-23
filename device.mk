@@ -134,6 +134,14 @@ PRODUCT_PACKAGES += \
 	setup_fs \
 	e2fsck
 
+# Connectivity
+PRODUCT_PACKAGES := \
+	libwpa_client \
+	hostapd \
+	dhcpcd.conf \
+	wpa_supplicant \
+	wpa_supplicant.conf
+
 # Product Property
 PRODUCT_PROPERTY_OVERRIDES := \
 	wifi.interface=wlan0
