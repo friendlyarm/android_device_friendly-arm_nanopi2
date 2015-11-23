@@ -111,10 +111,9 @@ BOARD_SEPOLICY_DIRS := \
 BOARD_SEPOLICY_UNION := \
 	file_contexts \
 	genfs_contexts \
-	property_contexts \
-	property.te \
 	adbd.te \
 	app.te \
+	boardinit.te \
 	device.te \
 	domain.te \
 	file.te \
@@ -123,19 +122,10 @@ BOARD_SEPOLICY_UNION := \
 	system_server.te \
 	init.te \
 	kernel.te \
-	shell.te \
 	servicemanager.te \
 	netd.te \
 	healthd.te \
-	zygote.te \
-	installd.te \
-	sdcardd.te \
-	debuggerd.te \
-	unlabeled.te \
-	bootanim.te \
-	adjlowmem.te \
-	service_contexts \
-	service.te
+	sdcardd.te
 
 # ART
 ART_USE_HSPACE_COMPACT := true
