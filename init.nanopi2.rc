@@ -129,6 +129,10 @@ on fs
     chown system system /sys/devices/platform/display/active.0
     chown system system /sys/devices/platform/display/active.1
 
+# lowmem setting
+on property:sys.sysctl.extra_free_kbytes=*
+    write /sys/module/lowmemorykiller/parameters/minfree "6144,7680,9216,10752,12288,15360"
+
 # virtual sdcard daemon running as media_rw (1023)
 service sdcard /system/bin/sdcard -u 1023 -g 1023 -l /data/media /mnt/shell/emulated
     class late_start
