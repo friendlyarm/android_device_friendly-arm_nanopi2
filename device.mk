@@ -68,10 +68,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
 	sensors.nanopi2
 
-# camera
-PRODUCT_PACKAGES += \
-	camera.slsiap
-
 # hwc executable
 PRODUCT_PACKAGES += \
 	report_hwc_scenario

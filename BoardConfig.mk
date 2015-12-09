@@ -63,7 +63,8 @@ BOARD_HAVE_BLUETOOTH_BCM := true
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/friendly-arm/nanopi2/bluetooth
 
 # camera
-BOARD_HAS_CAMERA := false
+BOARD_HAS_CAMERA := true
+BOARD_CAMERA_BACK:= true
 
 # v4l2
 BOARD_USES_HDMI  := true
