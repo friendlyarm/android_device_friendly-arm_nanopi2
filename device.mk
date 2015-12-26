@@ -35,6 +35,7 @@ PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/init.nanopi2.usb.rc:root/init.nanopi2.usb.rc \
 	$(LOCAL_PATH)/init.recovery.nanopi2.rc:root/init.recovery.nanopi2.rc \
 	$(LOCAL_PATH)/fstab.nanopi2:root/fstab.nanopi2 \
+	$(LOCAL_PATH)/fstab.nanopi2.emmc:root/fstab.nanopi2.emmc \
 	$(LOCAL_PATH)/ueventd.nanopi2.rc:root/ueventd.nanopi2.rc \
 	$(LOCAL_PATH)/bootanimation.zip:system/media/bootanimation.zip
 
