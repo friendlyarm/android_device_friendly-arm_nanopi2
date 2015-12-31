@@ -40,6 +40,10 @@ allow boardinit sysfs_lowmemorykiller:file open;
 # Bluetooth
 allow bluetooth sysfs:file write;
 
+# External storage
+allow vold labeledfs:filesystem { relabelfrom };
+allow vfat labeledfs:filesystem associate;
+
 # Access /dev/rfkill
 type rfkill_device, dev_type;
 allow wpa rfkill_device:chr_file rw_file_perms;
