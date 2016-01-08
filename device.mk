@@ -48,6 +48,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/gslX680.idc:system/usr/idc/gslX680.idc \
 	$(LOCAL_PATH)/ft5x0x_ts.idc:system/usr/idc/ft5x0x_ts.idc \
+	$(LOCAL_PATH)/it7260_ts.idc:system/usr/idc/it7260_ts.idc \
 	$(LOCAL_PATH)/fa_ts_input.idc:system/usr/idc/fa_ts_input.idc
 
 # mixer paths
