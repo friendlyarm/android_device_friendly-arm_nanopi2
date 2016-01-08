@@ -21,3 +21,5 @@
 # bt
 /dev/ttyAMA1              0660   bluetooth  net_bt_stack
 /dev/rfkill               0666   bluetooth  net_bt_stack
+
+/dev/backlight-1wire      0660   system     system
