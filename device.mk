@@ -133,7 +133,7 @@ PRODUCT_PACKAGES += \
 	e2fsck
 
 # Connectivity
-PRODUCT_PACKAGES := \
+PRODUCT_PACKAGES += \
 	libwpa_client \
 	hostapd \
 	dhcpcd.conf \
