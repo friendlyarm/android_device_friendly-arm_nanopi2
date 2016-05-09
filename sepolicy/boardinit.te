@@ -45,3 +45,6 @@ allow healthd rootfs:file entrypoint;
 # FFmpeg
 allow zygote self:process execmem;
 
+# Uart
+allow system_app tty_device:chr_file rw_file_perms;
+
