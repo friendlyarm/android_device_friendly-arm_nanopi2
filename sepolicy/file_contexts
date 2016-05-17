@@ -25,3 +25,4 @@
 /dev/rfkill             u:object_r:rfkill_device:s0
 /dev/backlight-1wire    u:object_r:sensors_device:s0
 /dev/ttyAMA[234]        u:object_r:tty_device:s0
+/dev/ttyUSB*            u:object_r:tty_device:s0
