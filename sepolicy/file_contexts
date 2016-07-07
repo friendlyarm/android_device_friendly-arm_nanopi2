@@ -2,6 +2,8 @@
 # to allow write operation from appdomain
 /dev/vr                 u:object_r:vr_device:s0
 
+/dev/nx_vpu             u:object_r:video_device:s0
+/dev/nxp-scaler         u:object_r:video_device:s0
 /dev/v4l-subdev[0-9]*   u:object_r:video_device:s0
 /dev/media0             u:object_r:video_device:s0
 /dev/video0             u:object_r:video_device:s0
@@ -16,3 +18,6 @@
 /dev/video9             u:object_r:video_device:s0
 /dev/video10            u:object_r:video_device:s0
 
+/dev/ttyAMA0            u:object_r:tty_device:s0
+/dev/ttyAMA1            u:object_r:hci_attach_dev:s0
+/dev/rfkill             u:object_r:rfkill_device:s0

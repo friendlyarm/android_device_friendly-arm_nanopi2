@@ -113,6 +113,7 @@ BOARD_SEPOLICY_UNION := \
 	genfs_contexts \
 	adbd.te \
 	app.te \
+	boardinit.te \
 	device.te \
 	domain.te \
 	file.te \
