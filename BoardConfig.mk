@@ -77,8 +77,7 @@ BOARD_HAS_SENSOR := false
 BOARD_SENSOR_TYPE := general
 
 # external ffmpeg plugin
-EN_FFMPEG_EXTRACTOR := false
-EN_FFMPEG_AUDIO_DEC := false
+-include device/friendly-arm/nanopi2/BoardConfigFFmpeg.mk
 
 # wifi
 BOARD_WIFI_VENDOR := ap6212

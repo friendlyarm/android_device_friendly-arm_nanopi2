@@ -73,8 +73,7 @@ PRODUCT_PACKAGES += \
 	report_hwc_scenario
 
 # ffmpeg libraries
-EN_FFMPEG_EXTRACTOR := false
-EN_FFMPEG_AUDIO_DEC := false
+-include $(LOCAL_PATH)/BoardConfigFFmpeg.mk
 
 # These are the hardware-specific features
 PRODUCT_COPY_FILES += \
@@ -148,7 +147,7 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 	persist.sys.usb.config=mtp
 
 # ota updater test
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
 	OTAUpdateCenter
 
 # miracast sink
@@ -172,3 +171,6 @@ $(call inherit-product-if-exists, vendor/broadcom/nanopi2/device-partial.mk)
 
 # google gms
 $(call inherit-product-if-exists, vendor/google/gapps/device-partial.mk)
+
+# Nexell Application
+$(call inherit-product-if-exists, vendor/nexell/apps/nxapps.mk)
