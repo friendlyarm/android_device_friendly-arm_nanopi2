@@ -6,3 +6,6 @@ persist.demo.hdmirotationlock=1
 
 # disable strict mode
 persist.sys.strictmode.disable=1
+
+# WCDMA Preferred
+keyguard.no_require_sim=1

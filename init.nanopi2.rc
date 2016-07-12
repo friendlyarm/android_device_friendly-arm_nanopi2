@@ -101,7 +101,8 @@ on boot
     write /proc/sys/vm/min_free_order_shift 1
 
     mount debugfs /sys/kernel/debug /sys/kernel/debug
-    setprop ro.radio.noril yes
+    setprop ro.radio.noril no
+    setprop hw.nophone false
 
     # HACK, suspend is broken. remove me when it's fixed
     write /sys/power/wake_lock taken_from_init_nanopi2_rc

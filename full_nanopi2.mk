@@ -37,8 +37,12 @@ PRODUCT_PROPERTY_OVERRIDES := \
 	net.dns1=8.8.8.8 \
 	net.dns2=8.8.4.4
 
+# Get the long list of APNs
+PRODUCT_COPY_FILES := \
+	device/friendly-arm/nanopi2/apns-full-conf.xml:system/etc/apns-conf.xml
+
 # Inherit from those products. Most specific first.
-$(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
 $(call inherit-product, device/friendly-arm/nanopi2/device.mk)
 
 # Discard inherited values and use our own instead.

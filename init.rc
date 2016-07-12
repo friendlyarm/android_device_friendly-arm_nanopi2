@@ -26,7 +26,7 @@ on init
 
 sysclktz 0
 
-loglevel 3
+loglevel 4
 
 # Backward compatibility
     symlink /system/etc /etc
@@ -345,6 +345,7 @@ on boot
     chown system system /sys/kernel/ipv4/tcp_rmem_def
     chown system system /sys/kernel/ipv4/tcp_rmem_max
     chown root radio /proc/cmdline
+    chmod 0666 /proc/cmdline
 
 # Set these so we can remotely update SELinux policy
     chown system system /sys/fs/selinux/load
@@ -363,6 +364,12 @@ on boot
     setprop net.tcp.buffersize.edge    4093,26280,35040,4096,16384,35040
     setprop net.tcp.buffersize.gprs    4092,8760,11680,4096,8760,11680
     setprop net.tcp.buffersize.evdo    4094,87380,262144,4096,16384,262144
+
+    # huawei lte
+    chmod 0666 /dev/ttyUSB1
+    chmod 0666 /dev/ttyUSB2
+    chmod 0755 /etc/ppp/ip-up
+    chmod 0755 /etc/ppp/ip-down
 
     class_start core
     class_start main
@@ -467,12 +474,23 @@ service netd /system/bin/netd
 service debuggerd /system/bin/debuggerd
     class main
 
-service ril-daemon /system/bin/rild
-    class main
-    socket rild stream 660 root radio
-    socket rild-debug stream 660 radio system
+service ril-daemon /system/bin/rild -l /system/lib/libhuawei-ril.so -- -d /dev/ttyUSB2 -u /dev/ttyUSB1
+     class main
+     socket rild stream 660 root radio
+     socket rild-debug stream 660 radio system
+     user root
+     group radio cache inet misc audio sdcard_r sdcard_rw log net_admin net_raw
+
+on property:ril.reset.rild=1
+    stop ril-daemon
+    start ril-daemon
+    setprop ril.reset.rild 0
+
+service pppd_gprs /system/etc/ppp/init.gprs-pppd
     user root
-    group radio cache inet misc audio log
+    group radio cache inet misc log net_admin net_raw
+    disabled
+    oneshot
 
 service surfaceflinger /system/bin/surfaceflinger
     class main

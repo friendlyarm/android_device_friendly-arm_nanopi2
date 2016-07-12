@@ -98,7 +98,14 @@ WIFI_DRIVER_FW_PATH_AP      := "/vendor/firmware/fw_bcm43438a0_apsta.bin"
 endif
 
 # RIL
-BOARD_HAS_RIL := false
+BOARD_HAS_RIL := true
+
+# LTE MODEM
+BOARD_HAVE_MODEM   := true
+BOARD_MODEM_VENDOR := Huawei
+BOARD_MODEM_ID     := ME909u-521
+BOARD_MODEM_HAVE_DATA_DEVICE := true
+BOARD_WITH_CALL_FUNCTION     := false
 
 # HWC
 SLSIAP_HWC_VERSION := 2

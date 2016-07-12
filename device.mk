@@ -75,6 +75,37 @@ PRODUCT_PACKAGES += \
 # ffmpeg libraries
 -include $(LOCAL_PATH)/BoardConfigFFmpeg.mk
 
+# lte
+PRODUCT_COPY_FILES += \
+	$(LOCAL_PATH)/huawei-lte/system/bin/armcomtest:system/bin/armcomtest \
+	$(LOCAL_PATH)/huawei-lte/system/bin/testpppd.sh:system/bin/testpppd.sh \
+	$(LOCAL_PATH)/huawei-lte/system/lib/libhuawei-ril.so:system/lib/libhuawei-ril.so \
+	$(LOCAL_PATH)/huawei-lte/system/lib/libhuawei-and4-ril.so:system/lib/libhuawei-and4-ril.so \
+	$(LOCAL_PATH)/huawei-lte/system/etc/ppp/init.gprs-pppd:system/etc/ppp/init.gprs-pppd \
+	$(LOCAL_PATH)/huawei-lte/system/etc/ppp/test3g.sh:system/etc/ppp/test3g.sh \
+	$(LOCAL_PATH)/huawei-lte/system/etc/ppp/ip-up:system/etc/ppp/ip-up \
+	$(LOCAL_PATH)/huawei-lte/system/etc/ppp/peers/chat-testmodem:system/etc/ppp/peers/chat-testmodem \
+	$(LOCAL_PATH)/huawei-lte/system/etc/ppp/peers/wcdma:system/etc/ppp/peers/wcdma \
+	$(LOCAL_PATH)/huawei-lte/system/etc/ppp/peers/tdscdma-usb1:system/etc/ppp/peers/tdscdma-usb1 \
+	$(LOCAL_PATH)/huawei-lte/system/etc/ppp/peers/tdscdma-usb2:system/etc/ppp/peers/tdscdma-usb2 \
+	$(LOCAL_PATH)/huawei-lte/system/etc/ppp/peers/tdscdma-usb3:system/etc/ppp/peers/tdscdma-usb3 \
+	$(LOCAL_PATH)/huawei-lte/system/etc/ppp/peers/chat-wcdma-connect:system/etc/ppp/peers/chat-wcdma-connect \
+	$(LOCAL_PATH)/huawei-lte/system/etc/ppp/peers/chat-cdma2000-connect:system/etc/ppp/peers/chat-cdma2000-connect \
+	$(LOCAL_PATH)/huawei-lte/system/etc/ppp/peers/chat-cdma2000-disconnect:system/etc/ppp/peers/chat-cdma2000-disconnect \
+	$(LOCAL_PATH)/huawei-lte/system/etc/ppp/peers/chat-tdscdma-connect:system/etc/ppp/peers/chat-tdscdma-connect \
+	$(LOCAL_PATH)/huawei-lte/system/etc/ppp/peers/wcdma-usb1:system/etc/ppp/peers/wcdma-usb1 \
+	$(LOCAL_PATH)/huawei-lte/system/etc/ppp/peers/cdma2000:system/etc/ppp/peers/cdma2000 \
+	$(LOCAL_PATH)/huawei-lte/system/etc/ppp/peers/cdma2000-for-ac8710:system/etc/ppp/peers/cdma2000-for-ac8710 \
+	$(LOCAL_PATH)/huawei-lte/system/etc/ppp/peers/tdscdma:system/etc/ppp/peers/tdscdma \
+	$(LOCAL_PATH)/huawei-lte/system/etc/ppp/peers/chat-wcdma-disconnect:system/etc/ppp/peers/chat-wcdma-disconnect \
+	$(LOCAL_PATH)/huawei-lte/system/etc/ppp/peers/wcdma-usb3:system/etc/ppp/peers/wcdma-usb3 \
+	$(LOCAL_PATH)/huawei-lte/system/etc/ppp/peers/chat-cdma2000-connect-for-ac8710:system/etc/ppp/peers/chat-cdma2000-connect-for-ac8710 \
+	$(LOCAL_PATH)/huawei-lte/system/etc/ppp/peers/tdscdma-usb6:system/etc/ppp/peers/tdscdma-usb6 \
+	$(LOCAL_PATH)/huawei-lte/system/etc/ppp/peers/chat-tdscdma-disconnect:system/etc/ppp/peers/chat-tdscdma-disconnect \
+	$(LOCAL_PATH)/huawei-lte/system/etc/ppp/peers/wcdma-usb2:system/etc/ppp/peers/wcdma-usb2 \
+	$(LOCAL_PATH)/huawei-lte/system/etc/ppp/ip-down:system/etc/ppp/ip-down \
+	$(LOCAL_PATH)/spn-conf.xml:system/etc/spn-conf.xml
+
 # These are the hardware-specific features
 PRODUCT_COPY_FILES += \
 	frameworks/native/data/etc/tablet_core_hardware.xml:system/etc/permissions/tablet_core_hardware.xml \
@@ -90,6 +121,8 @@ PRODUCT_COPY_FILES += \
 	frameworks/native/data/etc/android.hardware.sensor.accelerometer.xml:system/etc/permissions/android.hardware.sensor.accelerometer.xml \
 	frameworks/native/data/etc/android.hardware.sensor.barometer.xml:system/etc/permissions/android.hardware.sensor.barometer.xml \
 	frameworks/native/data/etc/android.hardware.sensor.light.xml:system/etc/permissions/android.hardware.sensor.light.xml \
+	frameworks/native/data/etc/android.hardware.telephony.gsm.xml:system/etc/permissions/android.hardware.telephony.gsm.xml \
+	frameworks/native/data/etc/android.hardware.telephony.cdma.xml:system/etc/permissions/android.hardware.telephony.cdma.xml \
 	frameworks/native/data/etc/android.hardware.audio.low_latency.xml:system/etc/permissions/android.hardware.audio.low_latency.xml
 
 # Bluetooth
@@ -133,6 +166,33 @@ $(call inherit-product, frameworks/native/build/tablet-7in-hdpi-1024-dalvik-heap
 # This is a 16.16 fixed point number
 PRODUCT_PROPERTY_OVERRIDES += \
 	ro.opengles.version=131072
+
+# Ril sends only one RIL_UNSOL_CALL_RING, so set call_ring.multiple to false
+PRODUCT_PROPERTY_OVERRIDES += \
+	ro.telephony.call_ring.multiple=0
+
+# Do not power down SIM card when modem is sent to Low Power Mode.
+PRODUCT_PROPERTY_OVERRIDES += \
+	persist.radio.apm_sim_not_pwdn=1
+
+# LTE, CDMA, GSM/WCDMA
+PRODUCT_PROPERTY_OVERRIDES += \
+	ro.telephony.default_network=10 \
+	telephony.lteOnCdmaDevice=0 \
+	persist.radio.mode_pref_nv10=1
+
+# update 1x signal strength after 2s
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+	persist.radio.snapshot_enabled=1 \
+	persist.radio.snapshot_timer=2
+
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+	persist.radio.use_cc_names=true
+
+# If data_no_toggle is 1 then active and dormancy enable at all times.
+# If data_no_toggle is 0 there are no reports if the screen is off.
+PRODUCT_PROPERTY_OVERRIDES += \
+	persist.radio.data_no_toggle=1
 
 # Enable AAC 5.1 output
 #PRODUCT_PROPERTY_OVERRIDES += \

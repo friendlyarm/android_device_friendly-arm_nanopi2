@@ -47,4 +47,5 @@ allow zygote self:process execmem;
 
 # Uart
 allow system_app tty_device:chr_file rw_file_perms;
+allow platform_app tty_device:chr_file rw_file_perms;
 
