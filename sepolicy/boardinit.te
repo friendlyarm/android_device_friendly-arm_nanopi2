@@ -13,7 +13,7 @@ allow boardinit self:capability {
     sys_module
 };
 
-# Runs init.nanopi2.sh
+# Runs init.${ro.hardware}.sh
 allow boardinit shell_exec:file rx_file_perms;
 allow boardinit boardinit_exec:file rx_file_perms;
 
@@ -53,4 +53,5 @@ allow zygote self:process execmem;
 
 # Uart
 allow system_app tty_device:chr_file rw_file_perms;
+allow platform_app tty_device:chr_file rw_file_perms;
 
