@@ -78,25 +78,26 @@
 <MediaSettings>
     <!-- Each camcorder profile defines a set of predefined configuration parameters -->
     <CamcorderProfiles cameraId="0">
-        <EncoderProfile quality="1080p" fileFormat="mp4" duration="60">
+        <!-- 1080p isn't supported by OV5640 driver -->
+        <!--<EncoderProfile quality="1080p" fileFormat="mp4" duration="60">
             <Video codec="h264"
                    bitRate="12000000"
-                   width="1600"
-                   height="1200"
+                   width="1920"
+                   height="1080"
                    frameRate="8" />
 
             <Audio codec="aac"
                    bitRate="96000"
                    sampleRate="44100"
                    channels="1" />
-        </EncoderProfile>
+        </EncoderProfile>-->
 
         <EncoderProfile quality="720p" fileFormat="mp4" duration="60">
             <Video codec="h264"
                    bitRate="8000000"
-                   width="800"
-                   height="600"
-                   frameRate="12" />
+                   width="1280"
+                   height="720"
+                   frameRate="15" />
 
             <Audio codec="aac"
                    bitRate="96000"
@@ -104,12 +105,40 @@
                    channels="1" />
         </EncoderProfile>
 
-        <EncoderProfile quality="timelapse1080p" fileFormat="mp4" duration="60">
+        <EncoderProfile quality="480p" fileFormat="mp4" duration="60">
             <Video codec="h264"
+                   bitRate="3000000"
+                   width="640"
+                   height="480"
+                   frameRate="30" />
+
+            <Audio codec="aac"
+                   bitRate="96000"
+                   sampleRate="44100"
+                   channels="1" />
+        </EncoderProfile>
+
+        <!-- 1080p isn't supported by OV5640 driver -->
+        <!--<EncoderProfile quality="timelapse1080p" fileFormat="mp4" duration="60">-->
+            <!--<Video codec="h264"
                    bitRate="12000000"
-                   width="1600"
-                   height="1200"
-                   frameRate="8" />
+                   width="1920"
+                   height="1080"
+                   frameRate="8" />-->
+
+            <!-- Audio settings are not used for timealpse video recording -->
+            <!--<Audio codec="aac"
+                   bitRate="96000"
+                   sampleRate="44100"
+                   channels="1" />-->
+        <!--</EncoderProfile>-->
+
+        <EncoderProfile quality="timelapse720p" fileFormat="mp4" duration="60">
+            <Video codec="h264"
+                   bitRate="8000000"
+                   width="1280"
+                   height="720"
+                   frameRate="15" />
 
             <!-- Audio settings are not used for timealpse video recording -->
             <Audio codec="aac"
@@ -118,12 +147,12 @@
                    channels="1" />
         </EncoderProfile>
 
-        <EncoderProfile quality="timelapse720p" fileFormat="mp4" duration="60">
+        <EncoderProfile quality="timelapse480p" fileFormat="mp4" duration="60">
             <Video codec="h264"
-                   bitRate="8000000"
-                   width="800"
-                   height="600"
-                   frameRate="12" />
+                   bitRate="3000000"
+                   width="640"
+                   height="480"
+                   frameRate="30" />
 
             <!-- Audio settings are not used for timealpse video recording -->
             <Audio codec="aac"
@@ -143,23 +172,22 @@
 
         <EncoderProfile quality="480p" fileFormat="mp4" duration="60">
             <Video codec="h264"
-                   bitRate="8000000"
-                   width="608"
-                   height="479"
+                   bitRate="3000000"
+                   width="640"
+                   height="480"
                    frameRate="30" />
 
             <Audio codec="aac"
                    bitRate="96000"
                    sampleRate="44100"
                    channels="1" />
-
         </EncoderProfile>
 
         <EncoderProfile quality="timelapse480p" fileFormat="mp4" duration="60">
             <Video codec="h264"
                    bitRate="3000000"
-                   width="608"
-                   height="479"
+                   width="640"
+                   height="480"
                    frameRate="30" />
 
             <!-- Audio settings are not used for timealpse video recording -->
@@ -186,8 +214,8 @@
     -->
 
     <!--
-	FIXME : we only check Mpeg4 encorder cap and other codec doesn't check
-	        codec cap
+        FIXME : we only check Mpeg4 encorder cap and other codec doesn't check
+                codec cap
     -->
     <VideoEncoderCap name="h264" enabled="true"
         minBitRate="64000" maxBitRate="12000000"
