@@ -119,6 +119,33 @@ on boot
     # Set vr power policy as Coarse demand
     # write /sys/devices/platform/vr.0/power_policy coarse_demand
 
+# {{ for libfriendlyarm-hardware.so
+    chmod 0666 /dev/i2c-0
+    chmod 0666 /dev/i2c-1
+    chmod 0666 /dev/i2c-2
+    chmod 0666 /dev/i2c-3
+    chown system system /dev/i2c-0
+    chown system system /dev/i2c-1
+    chown system system /dev/i2c-2
+    chown system system /dev/i2c-3
+
+    chmod 0666 /dev/adc
+    chown system system /dev/adc
+    chmod 0666 /dev/pwm
+    chown system system /dev/pwm
+
+    # chmod 0666 /dev/watchdog
+    # chown system system /dev/watchdog
+
+    chown system system /sys/class/gpio/export
+    chown system system /sys/class/gpio/unexport
+    chmod 0666 /sys/class/gpio/export
+    chmod 0666 /sys/class/gpio/unexport
+
+    chmod 0666 /dev/spidev0.0
+    chown system system /dev/spidev0.0
+# }}
+
 on fs
     mount_all /fstab.nanopi2
     setprop ro.crypto.fuse_sdcard true

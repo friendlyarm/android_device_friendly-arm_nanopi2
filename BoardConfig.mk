@@ -109,11 +109,13 @@ SLSIAP_HWC_VERSION := 2
 BOARD_SEPOLICY_DIRS := \
 	device/friendly-arm/nanopi2/sepolicy
 
+BOARD_SEPOLICY_REPLACE := \
+	app.te
+
 BOARD_SEPOLICY_UNION := \
 	file_contexts \
 	genfs_contexts \
 	adbd.te \
-	app.te \
 	boardinit.te \
 	device.te \
 	domain.te \

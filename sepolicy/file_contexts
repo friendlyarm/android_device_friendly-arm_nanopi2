@@ -26,3 +26,8 @@
 /dev/backlight-1wire    u:object_r:sensors_device:s0
 /dev/ttyAMA[234]        u:object_r:tty_device:s0
 /dev/ttyUSB*            u:object_r:tty_device:s0
+/dev/i2c-[0-3]*         u:object_r:i2c_device:s0
+/dev/spidev0.[0-1]*     u:object_r:spi_device:s0
+/dev/adc                u:object_r:adc_device:s0
+/dev/pwm                u:object_r:pwm_device:s0
+

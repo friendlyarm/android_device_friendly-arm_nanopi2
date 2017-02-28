@@ -55,3 +55,27 @@ allow zygote self:process execmem;
 allow system_app tty_device:chr_file rw_file_perms;
 allow platform_app tty_device:chr_file rw_file_perms;
 
+# GPIO
+allow system_app sysfs:file rw_file_perms;
+allow platform_app sysfs:file rw_file_perms;
+
+# I2C
+type i2c_device, dev_type;
+allow system_app i2c_device:chr_file rw_file_perms;
+allow platform_app i2c_device:chr_file rw_file_perms;
+
+# SPI
+type spi_device, dev_type;
+allow system_app spi_device:chr_file rw_file_perms;
+allow platform_app spi_device:chr_file rw_file_perms;
+
+# ADC
+type adc_device, dev_type;
+allow system_app adc_device:chr_file rw_file_perms;
+allow platform_app adc_device:chr_file rw_file_perms;
+
+# PWM
+type pwm_device, dev_type;
+allow system_app pwm_device:chr_file rw_file_perms;
+allow platform_app pwm_device:chr_file rw_file_perms;
+
